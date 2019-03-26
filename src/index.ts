@@ -1,4 +1,16 @@
 import {
+  JupyterLab, JupyterLabPlugin, ILayoutRestorer
+} from '@jupyterlab/application';
+
+import {
+  ICommandPalette, InstanceTracker
+} from '@jupyterlab/apputils';
+
+import {
+  JSONExt
+} from '@phosphor/coreutils';
+
+import {
   Message
 } from '@phosphor/messaging';
 
@@ -6,19 +18,8 @@ import {
   Widget
 } from '@phosphor/widgets';
 
-import {
-  ICommandPalette, InstanceTracker
-} from '@jupyterlab/apputils';
-
-import {
-  JupyterLab, JupyterLabPlugin, ILayoutRestorer
-} from '@jupyterlab/application';
-
-import {
-  JSONExt // new
-} from '@phosphor/coreutils';
-
 import '../style/index.css';
+
 
 /**
  * An xckd comic viewer.
@@ -67,6 +68,7 @@ class XkcdWidget extends Widget {
   }
 };
 
+
 /**
  * Activate the xckd widget extension.
  */
@@ -113,6 +115,7 @@ function activate(app: JupyterLab, palette: ICommandPalette, restorer: ILayoutRe
     name: () => 'xkcd'
   });
 };
+
 
 /**
  * Initialization data for the jupyterlab_xkcd extension.
